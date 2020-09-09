@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SupermarketSklavenitis.Models;
 
 namespace SupermarketSklavenitis.Data
 {
@@ -12,5 +13,7 @@ namespace SupermarketSklavenitis.Data
             : base(options)
         {
         }
+
+        public DbSet<Category> Category { get; set; }
     }
 }
