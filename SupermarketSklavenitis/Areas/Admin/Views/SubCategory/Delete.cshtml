@@ -1,0 +1,37 @@
+﻿@model SupermarketSklavenitis.Models.ViewModels.SubCategoryAndCategoryViewModel
+@using SupermarketSklavenitis.Extensions
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2 class="text-info">Delete Sub Category</h2>
+<br />
+
+<form method="post" asp-action="Delete">
+    <div class="border backgroundWhite">
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="SubCategory.Name" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="SubCategory.Name" readonly class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="SubCategory.CategoryId" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <select id="ddlCategorylist" asp-for="SubCategory.CategoryId" disabled asp-items="Model.CategoryList.ToSelectListItem(Model.SubCategory.CategoryId)" class="form-control" )></select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-5 offset-2">
+                <partial name="_DeleteAndBackToListButton" model="Model.SubCategory.Id" />
+            </div>
+        </div>
+    </div>
+</form>
+
