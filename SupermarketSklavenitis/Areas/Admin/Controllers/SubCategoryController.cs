@@ -63,6 +63,7 @@ namespace SupermarketSklavenitis.Areas.Admin.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
+            //Loads the Create view with the initial model if ModelState is not valid
             SubCategoryAndCategoryViewModel modelVM = new SubCategoryAndCategoryViewModel()
             {
                 CategoryList = await _db.Category.ToListAsync(),
