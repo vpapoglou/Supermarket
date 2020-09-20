@@ -205,7 +205,7 @@ namespace SupermarketSklavenitis.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            //no need to create viewModel item because we have the Bind Property
+            //no need to create model item because we have the Bind Property
             MenuItemVM.MenuItem = await _db.MenuItem.Include(m => m.Category).Include(m => m.SubCategory).SingleOrDefaultAsync(m => m.Id == id);
             MenuItemVM.SubCategory = await _db.SubCategory.Where(s => s.CategoryId == MenuItemVM.MenuItem.CategoryId).ToListAsync();
 

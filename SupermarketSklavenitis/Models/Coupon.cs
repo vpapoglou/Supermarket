@@ -25,7 +25,7 @@ namespace SupermarketSklavenitis.Models
         [Required]
         public double MinimumAmount { get; set; }
 
-        [Required]
+        //[Required]
         public byte[] Picture { get; set; }
         public bool IsActive { get; set; }
     }
