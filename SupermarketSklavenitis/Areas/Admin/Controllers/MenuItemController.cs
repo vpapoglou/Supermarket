@@ -168,7 +168,7 @@ namespace SupermarketSklavenitis.Areas.Admin.Controllers
             menuItemFromDb.Name = MenuItemVM.MenuItem.Name;
             menuItemFromDb.Description = MenuItemVM.MenuItem.Description;
             menuItemFromDb.Price = MenuItemVM.MenuItem.Price;
-            menuItemFromDb.Spicyness = MenuItemVM.MenuItem.Spicyness;
+            menuItemFromDb.Sweeteners = MenuItemVM.MenuItem.Sweeteners;
             menuItemFromDb.CategoryId = MenuItemVM.MenuItem.CategoryId;
             menuItemFromDb.SubCategoryId = MenuItemVM.MenuItem.SubCategoryId;
 

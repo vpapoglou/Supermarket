@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MenuItem>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@if (Model.Count() > 0)
+{
+    <div class="col-12 post @Model.FirstOrDefault().Category.Name.Replace(" ",string.Empty) menu-supermarket">
+        <div class="row">
+            <h3 class="text-success"> @Model.FirstOrDefault().Category.Name</h3>
+        </div>
+
+
+        @foreach (var item in Model)
+        {
+            <div class="border border-info rounded col-12" style="margin-bottom:10px; margin-top:10px; padding:10px">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <img src="@item.Image" width="99%" style="border-radius:5px;border:1px solid #bbb9b9" />
+                    </div>
+                    <div class="col-md-9 col-sm-12">
+                        <div class="row pr-3">
+                            <div class="col-8">
+                                <label class="text-primary" style="font-size:21px;color:maroon">@item.Name</label>
+                                @if (item.Sweeteners == "1")
+                                {
+                                    <img srcset="/images/NoSweeteners.png" height="20" width="60" title="No Sweeteners" /><img srcset="/images/tick.jpg" height="20" width="25" />
+                                }
+                                @if (item.Sweeteners == "2")
+                                {<img srcset="/images/sugar.png" height="15" width="50" title="Sugar" /><img srcset="/images/tick.jpg" height="15" width="20" />
+                                }
+                                @if (item.Sweeteners == "3")
+                                {
+                                    <img srcset="/images/Stevia.png" height="15" width="50" title="Stevia" /><img srcset="/images/tick.jpg" height="15" width="20" />
+                                }
+                                @if (item.Sweeteners == "4")
+                                {
+                                    <img srcset="/images/OtherSweeteners.png" height="20" width="80" title="Other Sweeteners" /><img srcset="/images/tick.jpg" height="20" width="25" />
+                                }
+                            </div>
+                            <div class="col-4 text-right" style="color:maroon">
+                                <h4>$@item.Price</h4>
+                            </div>
+                        </div>
+
+                        <div class="row col-12 text-justify d-none d-md-block">
+                            <p>@Html.Raw(item.Description)</p> @*Raw is used because the Description is using a rich textbox and is saved in a strange format in db*@
+                        </div>
+                        <div class="col-md-3 col-sm-12 offset-md-9 text-center">
+                            <a asp-action="Details" class="btn btn-success form-control" asp-route-id="@item.Id">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="p-4"></div>
+    </div>
+}

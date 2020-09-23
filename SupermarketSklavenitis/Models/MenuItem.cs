@@ -14,8 +14,8 @@ namespace SupermarketSklavenitis.Models
         [Required]
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Spicyness { get; set; }
-        public enum ESpicy { NA=0, NotSpicy=1, Spicy=2, VerySpicy=3 }
+        public string Sweeteners { get; set; }
+        public enum ESweet { NA=0, NoSweeteners=1, Sugar=2, Stevia=3, OtherSweeteners=4 }
         public string Image { get; set; }
 
         [Display(Name="Category")]
