@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SupermarketSklavenitis.Data;
 using SupermarketSklavenitis.Models;
 using SupermarketSklavenitis.Models.ViewModels;
+using SupermarketSklavenitis.Utility;
 
 namespace SupermarketSklavenitis.Areas.Admin.Controllers
 {
+    [Authorize(Roles = SD.ManagerUser)]
     [Area("Admin")]
     public class SubCategoryController : Controller
     {

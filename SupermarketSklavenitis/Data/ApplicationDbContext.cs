@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SupermarketSklavenitis.Models;
+using VPapoglouSupermarket.Models;
 
 namespace SupermarketSklavenitis.Data
 {
@@ -18,5 +19,7 @@ namespace SupermarketSklavenitis.Data
         public DbSet<SubCategory> SubCategory { get; set; }
         public DbSet<MenuItem> MenuItem { get; set; }
         public DbSet<Coupon> Coupon { get; set; }
+
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
     }
 }
